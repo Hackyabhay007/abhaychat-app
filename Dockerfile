@@ -19,7 +19,7 @@ COPY frontend/package.json frontend/yarn.lock ./frontend/
 
 # Install dependencies and rebuild native modules
 RUN yarn install --frozen-lockfile
-RUN yarn rebuild argon2
+RUN rm -rf node_modules/argon2 && yarn add argon2@0.31.2
 RUN cd frontend && yarn install --frozen-lockfile
 
 # Copy source code
