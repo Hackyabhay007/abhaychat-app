@@ -1,15 +1,14 @@
 services:
   abhaychat:
     build: .
-    ports:
-      - "4002:4002"
+    restart: always
     environment:
       - NODE_ENV=production
       - PORT=4002
       - PUBLIC_IP_ADDRESS=0.0.0.0
       - MAPPED_IP=true
       - AUTH_SECRET=abhaychat-secret-key-2024
-      - BASE_URL=http://localhost:4002
+      - BASE_URL=https://your-domain.com
       - ROOT_USER_USERNAME=admin
       - ROOT_USER_EMAIL=admin@abhaychat.com
       - ROOT_USER_PASSWORD=admin123
@@ -19,11 +18,13 @@ services:
       - MONGO_DATABASE=abhaychat
       - MAILER_ENABLED=false
     volumes:
-      - ./data:/app/data
-    restart: unless-stopped
+      - abhaychat_data:/app/data
     networks:
-      - abhaychat-network
+      - dokploy-network
+
+volumes:
+  abhaychat_data:
 
 networks:
-  abhaychat-network:
-    driver: bridge
+  dokploy-network:
+    external: true

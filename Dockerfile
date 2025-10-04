@@ -14,20 +14,20 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 # Copy package files
-COPY backend/package.json backend/yarn.lock ./
-COPY frontend/package.json frontend/yarn.lock ./frontend/
+COPY backend/package.json ./
+COPY frontend/package.json ./frontend/
 
 # Install dependencies and rebuild native modules
-RUN yarn install --frozen-lockfile
-RUN rm -rf node_modules/argon2 && yarn add argon2@0.31.2
-RUN cd frontend && yarn install --frozen-lockfile
+RUN npm install --only=production
+RUN rm -rf node_modules/argon2 && npm install argon2@0.31.2
+RUN cd frontend && npm install
 
 # Copy source code
 COPY backend/ ./
 COPY frontend/ ./frontend/
 
 # Build frontend
-RUN cd frontend && yarn build
+RUN cd frontend && npm run build
 
 # Create data directory
 RUN mkdir -p ./data
