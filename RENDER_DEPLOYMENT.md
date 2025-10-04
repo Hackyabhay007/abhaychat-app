@@ -62,10 +62,9 @@ MAILER_ENABLED=false
 3. Add your domain (e.g., `abhaychat.example.com`)
 4. Follow DNS configuration instructions
 
-### 4.2 Update Environment Variables
+### 3.2 Update Environment Variables
 After setting up custom domain, update:
 ```
-VITE_BACKEND_URL=https://your-custom-domain.com
 BASE_URL=https://your-custom-domain.com
 ```
 
@@ -74,12 +73,12 @@ BASE_URL=https://your-custom-domain.com
 ## Step 5: Access Your Application
 
 ### URLs:
-- **Frontend**: `https://abhaychat-frontend.onrender.com`
-- **Backend**: `https://abhaychat-backend.onrender.com`
+- **Main App**: `https://abhaychat-app.onrender.com`
+- **Admin Panel**: `https://abhaychat-app.onrender.com/admin`
 - **Custom Domain**: `https://your-domain.com` (if configured)
 
 ### Admin Access:
-- **Admin Panel**: `https://your-frontend-url/admin`
+- **Admin Panel**: `https://abhaychat-app.onrender.com/admin`
 - **Username**: `admin`
 - **Password**: `your-secure-password`
 
