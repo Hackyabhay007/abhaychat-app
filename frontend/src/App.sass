@@ -1,5 +1,5 @@
 html, body, #root, .theme
-  background: #303841
+  background: #1a1f2e
   position: fixed
   width: 100%
   height: 100%
@@ -14,8 +14,20 @@ body
 code
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
+// Cobalt Theme Variables
+$cobalt-primary: #0047AB
+$cobalt-secondary: #1e3a8a
+$cobalt-accent: #3b82f6
+$cobalt-dark: #1a1f2e
+$cobalt-darker: #0f1419
+$cobalt-light: #e0e7ff
+$cobalt-lighter: #f8fafc
+$cobalt-text: #ffffff
+$cobalt-text-secondary: #cbd5e1
+$cobalt-border: #334155
+
 // Custom variables and overwrites.
-$global-link-color: #0047AB
+$global-link-color: $cobalt-primary
 
 // UIkit defaults.
 @import "../node_modules/uikit/src/scss/variables-theme.scss"
@@ -29,26 +41,67 @@ $global-link-color: #0047AB
 @import "../node_modules/uikit/src/scss/uikit-theme.scss"
 
 .uk-dropdown
-  border: 1px solid rgba(218, 220, 224, 0.5)
-  box-shadow: none // -0 0 3px rgba(0, 0, 0, 0.05)
+  border: 1px solid $cobalt-border
+  background: $cobalt-dark
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
   padding: 2px
   min-width: 150px
   font-size: 12px
   .link
     padding: 8px 12px
-    color: #666
+    color: $cobalt-text-secondary
     cursor: pointer
     display: flex
+    transition: all 0.2s ease
     .icon
       padding-left: 4px
       margin-top: -2px
   .link:hover
-    background: rgba(218, 220, 224, 0.2)
+    background: $cobalt-secondary
+    color: $cobalt-text
   .divider
     width: 100%
     height: 0
-    border-bottom: 1px solid rgba(218, 220, 224, 0.5)
+    border-bottom: 1px solid $cobalt-border
 
 .uk-button.uk-button-honey
-  background: #0047AB
-  color: #ffffff
+  background: $cobalt-primary
+  color: $cobalt-text
+  border: 1px solid $cobalt-primary
+  transition: all 0.2s ease
+  &:hover
+    background: $cobalt-secondary
+    border-color: $cobalt-secondary
+    transform: translateY(-1px)
+    box-shadow: 0 4px 8px rgba(0, 71, 171, 0.3)
+
+// Cobalt Theme Classes
+.theme.cobalt
+  background: $cobalt-dark
+  color: $cobalt-text
+  
+  .panel
+    background: $cobalt-darker
+    border-right: 1px solid $cobalt-border
+    
+  .conversation
+    background: $cobalt-dark
+    
+  .top-bar, .bottom-bar
+    background: $cobalt-darker
+    border-color: $cobalt-border
+    
+  .message
+    background: $cobalt-secondary
+    color: $cobalt-text
+    
+  .input, .textarea
+    background: $cobalt-darker
+    border-color: $cobalt-border
+    color: $cobalt-text
+    
+  .button
+    background: $cobalt-primary
+    color: $cobalt-text
+    &:hover
+      background: $cobalt-secondary

@@ -22,7 +22,7 @@ function App() {
   const token = useGlobal('token')[0];
   const setStartingPoint = useGlobal('entryPath')[1];
 
-  if (!['dark', 'light'].includes(Config.theme)) Config.theme = 'light';
+  if (!['dark', 'light', 'cobalt'].includes(Config.theme)) Config.theme = 'cobalt';
 
   useEffect(() => {
     if (!io || !getGlobal().user || !token) return;

@@ -4,4 +4,5 @@ export default {
   appName: import.meta.env.VITE_SITE_TITLE || 'AbhayChat',
   brand: import.meta.env.VITE_SITE_BRAND || 'Abhay Gupta',
   showCredits: import.meta.env.VITE_SHOW_CREDITS === 'true',
+  theme: 'cobalt', // Cobalt theme as default
 };
