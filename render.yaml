@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: abhaychat-app
+    env: node
+    plan: free
+    buildCommand: cd backend && yarn install --production
+    startCommand: cd backend && node index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.4
+      - key: PORT
+        value: 4002
+      - key: PUBLIC_IP_ADDRESS
+        value: 0.0.0.0
+      - key: MAPPED_IP
+        value: true
+      - key: AUTH_SECRET
+        value: abhaychat-secret-key-2024
+      - key: BASE_URL
+        value: https://abhaychat-app.onrender.com
+      - key: ROOT_USER_USERNAME
+        value: admin
+      - key: ROOT_USER_EMAIL
+        value: admin@abhaychat.com
+      - key: ROOT_USER_PASSWORD
+        value: admin123
+      - key: ROOT_USER_FIRST_NAME
+        value: Abhay
+      - key: ROOT_USER_LAST_NAME
+        value: Gupta
+      - key: MONGO_URI
+        value: mongodb+srv://hacky:YHW7zAt9S6s1ABJ7@cluster0.ajesf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: MONGO_DATABASE
+        value: abhaychat
+      - key: MAILER_ENABLED
+        value: false

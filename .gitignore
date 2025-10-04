@@ -4,7 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
-# yarn.lock - Keep this for Docker builds
+# yarn.lock - Keep this for Render builds
 
 # Environment variables
 # .env
@@ -117,8 +117,8 @@ logs
 data/
 uploads/
 
-# Docker
-.docker/
+# Render deployment
+.render/
 
 # Temporary files
 tmp/
