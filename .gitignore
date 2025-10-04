@@ -4,7 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
-yarn.lock
+# yarn.lock - Keep this for Docker builds
 
 # Environment variables
 # .env
